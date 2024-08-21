@@ -5,7 +5,7 @@ import { auth } from "@/lib/auth";
 
 const HomePage = async () => {
   const session = await auth();
-
+  console.log(session?.user);
   return (
     <div>
       {session ? (
