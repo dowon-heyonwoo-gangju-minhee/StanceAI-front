@@ -3,6 +3,10 @@ import Logout from "@/components/Logout";
 
 import { auth } from "@/lib/auth";
 
+export const metadata = {
+  title: "home",
+};
+
 const HomePage = async () => {
   const session = await auth();
   console.log(session?.user);

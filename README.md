@@ -1,1 +1,1 @@
-Nextjs Bolierplates
+StanceAI Project
