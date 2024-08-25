@@ -2,6 +2,8 @@ import Image from "next/image";
 import Logout from "@/components/Logout";
 
 import { auth } from "@/lib/auth";
+import SelectBox from "@/components/SelectBox";
+import Search from "@/components/Search";
 
 export const metadata = {
   title: "home",
@@ -19,7 +21,10 @@ const HomePage = async () => {
           <Logout />
         </>
       ) : (
-        "HomePage입니다"
+        <div className="w-full flex justify-between items-center mt-16">
+          <SelectBox />
+          <Search />
+        </div>
       )}
     </div>
   );

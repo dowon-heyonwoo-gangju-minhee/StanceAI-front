@@ -1,5 +1,9 @@
 import LoginForm from "@/components/LoginForm";
 
+export const metadata = {
+  title: "login",
+};
+
 const LoginPage = () => {
   return (
     <div>
