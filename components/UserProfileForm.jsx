@@ -1,23 +1,19 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { useRecoilValue } from "recoil";
 import { atomUserLoginInfo } from "@/hook/recoil/showUserInfo";
 
 import { JoinButton } from "./JoinButton";
 import UserPosition from "./UserPosition";
 import UserTools from "./UserTools";
-import NoticeModal from "./NoticeModal";
 import { useRouter } from "next/navigation";
 import Toast from "./Toast";
 
 const UserProfileForm = () => {
   const router = useRouter();
-  const userSession = useRecoilValue(atomUserLoginInfo);
   const [crewInfo, setCrewInfo] = useState({
-    userName: userSession?.name || "",
-    userEmail: userSession?.email || "",
-    nickName: userSession?.name || "",
+    nickName: "",
     position: "",
     tools: [],
     years: 0,
@@ -29,7 +25,17 @@ const UserProfileForm = () => {
   useEffect(() => {
     const savedCrewInfo = localStorage.getItem("crewInfo");
     if (savedCrewInfo) {
-      setCrewInfo(JSON.parse(savedCrewInfo));
+      const parsedCrewInfo = JSON.parse(savedCrewInfo);
+      setCrewInfo((prevState) => ({
+        ...prevState,
+        ...parsedCrewInfo,
+        nickName: parsedCrewInfo.nickName || "",
+        position: parsedCrewInfo.position || "",
+        tools: parsedCrewInfo.tools || [],
+        years: parsedCrewInfo.years || 0,
+        projectCount: parsedCrewInfo.projectCount || 0,
+        introduce: parsedCrewInfo.introduce || "",
+      }));
     }
   }, []);
 
@@ -72,6 +78,19 @@ const UserProfileForm = () => {
     [handleChange]
   );
 
+  const isProfileComplete = useMemo(() => {
+    return (
+      crewInfo.nickName !== "" &&
+      crewInfo.position !== "" &&
+      crewInfo.tools.length > 0 &&
+      crewInfo.years > 0 &&
+      crewInfo.projectCount > 0 &&
+      crewInfo.introduce !== ""
+    );
+  }, [crewInfo]);
+
+  const buttonTitle = isProfileComplete ? "수정하기" : "등록하기";
+
   return (
     <>
       <div className="w-full h-full flex flex-col gap-20 relative">
@@ -109,7 +128,10 @@ const UserProfileForm = () => {
           {/* 활용 툴 */}
           <div className="flex justify-center items-center gap-6">
             <p className="text-lg text-[#4f4f4f] font-bold">활용 툴</p>
-            <UserTools onSelect={handleToolSelect} selectedTools={crewInfo.tools.map((tool) => tool.stackName)} />
+            <UserTools
+              onSelect={handleToolSelect}
+              selectedTools={crewInfo?.tools?.map((tool) => tool.stackName) || []}
+            />
           </div>
           {/* 연차(경력) */}
           <div className="flex justify-center items-center gap-6">
@@ -140,7 +162,7 @@ const UserProfileForm = () => {
         </div>
         <div className="absolute right-0 bottom-24">
           <JoinButton
-            title="등록하기"
+            title={buttonTitle}
             style="bg-white ring-2 ring-accent text-accent hover:text-white"
             onClick={handleSubmit}
           />

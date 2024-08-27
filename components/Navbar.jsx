@@ -46,6 +46,26 @@ const Navbar = ({ session }) => {
     };
   }, []);
 
+  useEffect(() => {
+    if (session) {
+      setUserSession(session.user);
+
+      // localStorage에서 crewInfo 가져오기
+      const savedCrewInfo = JSON.parse(localStorage.getItem("crewInfo") || "{}");
+
+      // session 정보로 crewInfo 업데이트
+      const updatedCrewInfo = {
+        ...savedCrewInfo,
+        userName: session.user.name,
+        userEmail: session.user.email,
+        nickName: savedCrewInfo.nickName || session.user.name, 
+      };
+
+      // 업데이트된 crewInfo를 localStorage에 저장
+      localStorage.setItem("crewInfo", JSON.stringify(updatedCrewInfo));
+    }
+  }, [session, setUserSession]);
+
   return (
     <div className="max-w-[1920px] flex items-center justify-between">
       {/* NAV_RIGHT */}

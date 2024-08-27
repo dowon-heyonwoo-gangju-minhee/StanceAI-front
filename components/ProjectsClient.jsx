@@ -1,15 +1,22 @@
 "use client";
 
-import React, { useState } from "react";
-import { useRouter } from "next/navigation";
+import React, { useState, useEffect } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import Projects from "./Projects";
 
 const ProjectsClient = ({ projectData }) => {
   const router = useRouter();
+  const pathname = usePathname();
   const [showMessage, setShowMessage] = useState(false);
 
   const handleClose = () => {
-    router.replace(`/`, undefined, { shallow: true });
+    if (pathname.endsWith("participate")) {
+      const crewInfo = JSON.parse(localStorage.getItem("crewInfo") || "{}");
+      const userName = crewInfo.userName || "unknown";
+      router.push(`/myStance/${userName}/participate`);
+    } else {
+      router.replace("/", undefined, { shallow: true });
+    }
   };
 
   const handleJoinProject = () => {

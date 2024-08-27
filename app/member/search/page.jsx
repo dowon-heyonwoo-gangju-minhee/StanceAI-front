@@ -3,7 +3,7 @@ export const metadata = {
 };
 
 const MemberSearchPage = () => {
-  return <div>MemberSearchPage입니다.</div>;
+  return <div></div>;
 };
 
 export default MemberSearchPage;

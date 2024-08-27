@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation";
 
 const toolTabs = ["전체", "프론트엔드", "백엔드"];
 
-const UserTools = ({ onSelect, selectedTools }) => {
+const UserTools = ({ onSelect, selectedTools = [] }) => {
   const dropdownRef = useRef(null);
   const pathname = usePathname();
 
@@ -56,7 +56,7 @@ const UserTools = ({ onSelect, selectedTools }) => {
         aria-expanded={isOpen}
       >
         <p className="text-base font-medium text-black">
-          {selectedTools.length > 0 ? `${selectedTools.length}개 선택됨` : "기술 스택"}
+          {selectedTools?.length > 0 ? `${selectedTools.length}개 선택됨` : "기술 스택"}
         </p>
         <RiArrowDownSLine size={30} className="text-accent" />
       </div>
@@ -85,14 +85,14 @@ const UserTools = ({ onSelect, selectedTools }) => {
               <p
                 key={list.key}
                 className={`${
-                  selectedTools.includes(list.tool)
+                  selectedTools?.includes(list.tool)
                     ? "bg-[#878787] text-white font-semibold text-base"
                     : "text-black hover:bg-opacity-80"
                 }  rounded-full 
                   flex justify-center items-center w-28 h-9 cursor-pointer`}
                 onClick={() => handleSelect(list.tool)}
                 role="option"
-                aria-selected={selectedTools.includes(list.tool)}
+                aria-selected={selectedTools?.includes(list.tool)}
               >
                 {list.tool}
               </p>

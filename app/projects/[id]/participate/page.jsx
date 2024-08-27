@@ -1,8 +1,9 @@
 import HomePage from "@/app/home/page";
+import ParticipatePage from "@/app/myStance/[userId]/participate/page";
 import ProjectsClient from "@/components/ProjectsClient";
 import { allProjects } from "@/data/allProjects";
 
-const ProjectsPage = ({ params }) => {
+const ParticipateProjectPage = ({ params }) => {
   const projectId = params.id;
 
   const decodedProjectName = decodeURIComponent(projectId).replace(/-/g, " ");
@@ -33,10 +34,10 @@ const ProjectsPage = ({ params }) => {
 
   return (
     <>
-      <HomePage />
+      <ParticipatePage />
       {projectData ? <ProjectsClient projectData={projectData} /> : <div>Project not found</div>}
     </>
   );
 };
 
-export default ProjectsPage;
+export default ParticipateProjectPage;

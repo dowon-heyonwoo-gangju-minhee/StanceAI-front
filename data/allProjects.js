@@ -28,7 +28,7 @@ export const allProjects = {
           years: 2,
         },
         {
-          position: "백엔든",
+          position: "백엔드",
           tools: [{ stackName: "Nodejs" }, { stackName: "Javascript" }],
           years: 2,
         },
