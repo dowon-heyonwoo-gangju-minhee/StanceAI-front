@@ -8,7 +8,7 @@ import { atomIsOpenToolSelected } from "@/hook/recoil/select";
 
 const durations = ["1개월", "3개월", "6개월", "1년", "1년 이상"];
 
-const ProjectDurationSelect = () => {
+const ProjectDurationSelect = ({ onSelect }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState("프로젝트 기간");
   const dropdownRef = useRef(null);
@@ -20,6 +20,7 @@ const ProjectDurationSelect = () => {
   const handleSelect = (duration) => {
     setSelected(duration);
     setIsOpen(false);
+    onSelect(duration);
   };
 
   return (
@@ -34,8 +35,8 @@ const ProjectDurationSelect = () => {
         aria-haspopup="listbox"
         aria-expanded={isOpen}
       >
-        <p className="text-base font-medium text-black mt-1">{selected}</p>
-        <RiArrowDownSLine size={30} className="text-accent mt-1" />
+        <p className="text-base font-medium text-black">{selected}</p>
+        <RiArrowDownSLine size={30} className="text-accent" />
       </div>
       {isOpen && (
         <div
@@ -47,9 +48,11 @@ const ProjectDurationSelect = () => {
             <p
               key={index}
               className={twMerge(
-                `p-1 w-full h-9 flex justify-start items-center`,
-                selected === duration ? "text-white bg-accent font-semibold rounded-full" : "text-accent",
-                "px-4"
+                `p-1 w-full h-9 flex justify-start items-center cursor-pointer`,
+                selected === duration
+                  ? "text-white bg-accent font-semibold rounded-full"
+                  : "text-accent hover:bg-accent/50 hover:text-white hover:rounded-full transition-colors duration-200",
+                "px-4 rounded-full"
               )}
               onClick={() => handleSelect(duration)}
               role="option"

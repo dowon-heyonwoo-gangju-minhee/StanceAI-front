@@ -19,4 +19,9 @@ export const toolsContents = [
   { key: 18, tool: "php", part: "back" },
   { key: 19, tool: "GraphQL", part: "back" },
   { key: 20, tool: "Firebase", part: "back" },
+  { key: 21, tool: "Kubernetes", part: "back" },
+  { key: 22, tool: "Docker", part: "back" },
+  { key: 23, tool: "AWS", part: "back" },
+  { key: 24, tool: "Figma", part: "front" },
+  { key: 25, tool: "Adobe XD", part: "front" },
 ];

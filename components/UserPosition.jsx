@@ -1,19 +1,25 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { twMerge } from "tailwind-merge";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { usePathname } from "next/navigation";
 
 const positions = ["프론트엔드", "백엔드"];
 
-const PositionSelect = ({ onSelect }) => {
+const UserPosition = ({ onSelect, initialPosition }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selected, setSelected] = useState("포지션");
+  const [selected, setSelected] = useState(initialPosition || "포지션");
   const [hovered, setHovered] = useState(null);
   const dropdownRef = useRef(null);
 
   const pathname = usePathname();
+
+  useEffect(() => {
+    if (initialPosition) {
+      setSelected(initialPosition);
+    }
+  }, [initialPosition]);
 
   const toggleDropdown = () => setIsOpen((prev) => !prev);
 
@@ -75,4 +81,4 @@ const PositionSelect = ({ onSelect }) => {
   );
 };
 
-export default PositionSelect;
+export default UserPosition;

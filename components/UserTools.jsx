@@ -10,26 +10,23 @@ import { usePathname } from "next/navigation";
 
 const toolTabs = ["전체", "프론트엔드", "백엔드"];
 
-const ToolSelect = ({ onSelect, initialSelectedTools = [] }) => {
+const UserTools = ({ onSelect, selectedTools }) => {
   const dropdownRef = useRef(null);
   const pathname = usePathname();
 
   const [activeTab, setActiveTab] = useState("전체");
-  const [selectedTools, setSelectedTools] = useState(initialSelectedTools);
-
   const [isOpen, setIsOpen] = useRecoilState(atomIsOpenToolSelected);
 
   const toggleDropdown = () => setIsOpen((prev) => !prev);
 
   const handleSelect = useCallback(
     (tool) => {
-      setSelectedTools((prev) => {
-        const newSelectedTools = prev.includes(tool) ? prev.filter((t) => t !== tool) : [...prev, tool];
-        onSelect(newSelectedTools);
-        return newSelectedTools;
-      });
+      const newSelectedTools = selectedTools.includes(tool)
+        ? selectedTools.filter((t) => t !== tool)
+        : [...selectedTools, tool];
+      onSelect(newSelectedTools);
     },
-    [onSelect]
+    [selectedTools, onSelect]
   );
 
   const filteredTools = useMemo(() => {
@@ -107,4 +104,4 @@ const ToolSelect = ({ onSelect, initialSelectedTools = [] }) => {
   );
 };
 
-export default ToolSelect;
+export default UserTools;

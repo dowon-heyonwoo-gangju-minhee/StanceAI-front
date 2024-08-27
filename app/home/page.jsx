@@ -1,31 +1,18 @@
-import Image from "next/image";
-import Logout from "@/components/Logout";
-
-import { auth } from "@/lib/auth";
 import SelectBox from "@/components/SelectBox";
-import Search from "@/components/Search";
+import PostLists from "@/components/PostLists";
 
 export const metadata = {
   title: "home",
 };
 
-const HomePage = async () => {
-  const session = await auth();
-  console.log(session?.user);
+const HomePage = () => {
   return (
-    <div>
-      {session ? (
-        <>
-          <h1>{session?.user?.name}</h1>
-          <Image src={session?.user?.image} alt={session?.user?.name} width={70} height={70} className="rounded-full" />
-          <Logout />
-        </>
-      ) : (
-        <div className="w-full flex justify-between items-center mt-16">
-          <SelectBox />
-          <Search />
-        </div>
-      )}
+    <div className="w-full flex flex-col py-12">
+      <div className="w-full flex justify-between items-center mt-16">
+        <SelectBox />
+   
+      </div>
+      <PostLists />
     </div>
   );
 };

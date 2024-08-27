@@ -1,4 +1,5 @@
 import LoginForm from "@/components/LoginForm";
+import HomePage from "../home/page";
 
 export const metadata = {
   title: "login",
@@ -7,7 +8,7 @@ export const metadata = {
 const LoginPage = () => {
   return (
     <div>
-      LoginPage페이지입니다.
+      <HomePage />
       <LoginForm />
     </div>
   );
