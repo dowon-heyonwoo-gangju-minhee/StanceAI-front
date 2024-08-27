@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { FaRegUserCircle } from "react-icons/fa";
 import { GoBell } from "react-icons/go";
 import UserInfo from "./UserInfo";
@@ -17,6 +17,7 @@ const tabs = [
 
 const Navbar = ({ session }) => {
   const pathname = usePathname();
+  const router = useRouter();
   const userInfoRef = useRef(null);
 
   const setUserSession = useSetRecoilState(atomUserLoginInfo);
@@ -58,13 +59,17 @@ const Navbar = ({ session }) => {
         ...savedCrewInfo,
         userName: session.user.name,
         userEmail: session.user.email,
-        nickName: savedCrewInfo.nickName || session.user.name, 
+        nickName: savedCrewInfo.nickName || session.user.name,
       };
 
       // 업데이트된 crewInfo를 localStorage에 저장
       localStorage.setItem("crewInfo", JSON.stringify(updatedCrewInfo));
     }
   }, [session, setUserSession]);
+
+  const handleLoginClick = () => {
+    router.push("/login");
+  };
 
   return (
     <div className="max-w-[1920px] flex items-center justify-between">
@@ -122,7 +127,7 @@ const Navbar = ({ session }) => {
             </div>
           </div>
         ) : (
-          <FaRegUserCircle className="text-black" size={40} />
+          <FaRegUserCircle className="text-black cursor-pointer" size={40} onClick={handleLoginClick} />
         )}
       </div>
     </div>
