@@ -77,12 +77,7 @@ const UserProfileForm = () => {
 
   const isProfileComplete = useMemo(() => {
     return (
-      crewInfo.nickName !== "" &&
-      crewInfo.position !== "" &&
-      crewInfo.tools.length > 0 &&
-      crewInfo.years > 0 &&
-      crewInfo.projectCount > 0 &&
-      crewInfo.introduce !== ""
+      crewInfo.nickName !== "" && crewInfo.position !== "" && crewInfo.tools.length > 0 && crewInfo.introduce !== ""
     );
   }, [crewInfo]);
 

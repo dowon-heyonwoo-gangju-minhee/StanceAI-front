@@ -50,19 +50,15 @@ const Navbar = ({ session }) => {
   useEffect(() => {
     if (session) {
       setUserSession(session.user);
+      const storedCrewInfo = JSON.parse(localStorage.getItem("crewInfo") || "{}");
 
-      const storedProjectInfo = JSON.parse(localStorage.getItem("projectInfo") || "[]");
-
-      const updatedProjectInfo = storedProjectInfo.map((project) => ({
-        ...project,
-        crewInfo: {
-          ...project.crewInfo,
-          userName: session.user.name,
-          userEmail: session.user.email,
-          nickName: project.crewInfo?.nickName || session.user.name,
-        },
-      }));
-      localStorage.setItem("projectInfo", JSON.stringify(updatedProjectInfo));
+      const updatedCrewInfo = {
+        ...storedCrewInfo,
+        userName: session.user.name,
+        userEmail: session.user.email,
+        nickName: storedCrewInfo.nickName || session.user.name,
+      };
+      localStorage.setItem("crewInfo", JSON.stringify(updatedCrewInfo));
     }
   }, [session, setUserSession]);
 

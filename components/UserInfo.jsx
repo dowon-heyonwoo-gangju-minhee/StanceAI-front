@@ -10,18 +10,31 @@ import { atomIsShowUserInfo } from "@/hook/recoil/showUserInfo";
 const UserInfo = ({ session }) => {
   const router = useRouter();
   const [userName, setUserName] = useState(session?.user?.name);
-
   const setShowUserInfo = useSetRecoilState(atomIsShowUserInfo);
   const [participatingProjects, setParticipatingProjects] = useState(0);
+  const [crewInfo, setCrewInfo] = useState({});
 
   useEffect(() => {
-    const crewInfo = JSON.parse(localStorage.getItem("crewInfo")) || {};
-    const participateCount = crewInfo.participate?.length || 0;
-    setParticipatingProjects(participateCount);
+    const loadCrewInfo = () => {
+      const storedCrewInfo = JSON.parse(localStorage.getItem("crewInfo")) || {};
+      setCrewInfo(storedCrewInfo);
 
-    if (crewInfo.nickName && crewInfo.nickName.trim() !== "") {
-      setUserName(crewInfo.nickName);
-    }
+      const participateCount = storedCrewInfo.participate?.length || 0;
+      setParticipatingProjects(participateCount);
+
+      if (storedCrewInfo.nickName && storedCrewInfo.nickName.trim() !== "") {
+        setUserName(storedCrewInfo.nickName);
+      }
+    };
+
+    loadCrewInfo();
+
+    // 컴포넌트가 마운트될 때마다 crewInfo를 다시 로드
+    window.addEventListener("storage", loadCrewInfo);
+
+    return () => {
+      window.removeEventListener("storage", loadCrewInfo);
+    };
   }, []);
 
   const handleMyInfoClick = () => {
