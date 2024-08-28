@@ -47,7 +47,6 @@ const Post = ({ project, onLikeChange }) => {
       card.addEventListener("mousemove", handleMouseMove);
       card.addEventListener("mouseleave", handleMouseLeave);
     }
-    console.log("project", project);
     return () => {
       if (card) {
         card.removeEventListener("mousemove", handleMouseMove);
