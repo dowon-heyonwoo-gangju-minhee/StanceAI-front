@@ -674,7 +674,10 @@
     ],
   };
 
-  if (!localStorage.getItem("allProjects")) {
+  if (
+    !localStorage.getItem("allProjects") ||
+    JSON.parse(localStorage.getItem("allProjects")).projectInfo.length === 0
+  ) {
     localStorage.setItem("allProjects", JSON.stringify(allProjects));
   }
 })();
