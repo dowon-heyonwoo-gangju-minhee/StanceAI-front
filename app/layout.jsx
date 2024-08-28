@@ -26,7 +26,7 @@ export default async function RootLayout({ children }) {
             {children}
           </RecoilContextProvider>
         </div>
-        {/* <Script src="/initLocalStorage.js" strategy="afterInteractive" /> */}
+        <Script src="/initLocalStorage.js" strategy="afterInteractive" />
       </body>
     </html>
   );
