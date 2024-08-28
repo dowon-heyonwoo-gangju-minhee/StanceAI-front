@@ -1,0 +1,238 @@
+{
+  "projectInfo": [
+    {
+      "projectName": "React Deep Dive",
+      "like": false,
+      "description": "React의 깊은 이해도를 위한 프로젝트입니다. 우리 프로젝트는 React에 대한 심층적으로 구조화를 구성할 수 있습니다.",
+      "crewInfo": {
+        "userName": "So engineering",
+        "userEmail": "kokoball@gmail.com",
+        "nickName": "Soya",
+        "position": "프론트엔드",
+        "tools": [
+          { "stackName": "React" },
+          { "stackName": "Javascript" },
+          { "stackName": "Typescript" },
+          { "stackName": "Nodejs" },
+          { "stackName": "Vue" }
+        ],
+        "years": 2,
+        "projectCount": 2
+      },
+      "recruitmentInfo": [
+        {
+          "position": "프론트엔드",
+          "tools": [{ "stackName": "React" }, { "stackName": "Javascript" }],
+          "years": 2,
+          "expectedRecruitmentDuration": {
+            "startDate": "2024-08-27T11:36:38.244Z",
+            "endDate": "2024-09-27T11:36:38.244Z"
+          }
+        }
+      ],
+      "expectedProjectDuration": {
+        "startDate": "2024-08-27T11:36:38.243Z",
+        "endDate": "2024-12-27T11:36:38.244Z"
+      }
+    },
+    {
+      "projectName": "Next.js Performance Optimization",
+      "like": true,
+      "description": "Next.js 애플리케이션의 성능을 최적화하는 프로젝트입니다. 서버 사이드 렌더링과 정적 생성을 효과적으로 활용하는 방법을 탐구합니다.",
+      "tools": [
+        { "stackName": "Nextjs" },
+        { "stackName": "React" },
+        { "stackName": "Typescript" },
+        { "stackName": "Vue" }
+      ],
+      "crewInfo": {
+        "userName": "nextjs-guru",
+        "userEmail": "nextjs.guru@gmail.com",
+        "nickName": "NextMaster",
+        "position": "풀스택 개발자",
+        "tools": [
+          { "stackName": "Next.js" },
+          { "stackName": "React" },
+          { "stackName": "Typescript" },
+          { "stackName": "Node.js" },
+          { "stackName": "MongoDB" }
+        ],
+        "years": 4,
+        "projectCount": 5
+      },
+      "recruitmentInfo": [
+        {
+          "position": "백엔드",
+          "tools": [{ "stackName": "Nodejs" }, { "stackName": "MongoDB" }],
+          "years": 3,
+          "expectedRecruitmentDuration": {
+            "startDate": "2024-08-15T00:00:00.000Z",
+            "endDate": "2024-09-15T00:00:00.000Z"
+          }
+        }
+      ],
+      "expectedProjectDuration": {
+        "startDate": "2024-09-01T00:00:00.000Z",
+        "endDate": "2025-03-01T00:00:00.000Z"
+      }
+    },
+    {
+      "projectName": "Vue.js 3 Component Library",
+      "like": false,
+      "description": "Vue.js 3를 위한 재사용 가능한 컴포넌트 라이브러리를 개발하는 프로젝트입니다. Composition API를 활용하여 효율적이고 유연한 컴포넌트를 만듭니다.",
+      "tools": [
+        { "stackName": "Vue.js" },
+        { "stackName": "Javascript" },
+        { "stackName": "Jest" },
+        { "stackName": "MongoDB" }
+      ],
+      "crewInfo": {
+        "userName": "vue-components",
+        "userEmail": "vue.components@gmail.com",
+        "nickName": "VueWizard",
+        "position": "프론트엔드",
+        "tools": [
+          { "stackName": "Vue.js" },
+          { "stackName": "Javascript" },
+          { "stackName": "Svelte" },
+          { "stackName": "Webpack" }
+        ],
+        "years": 3,
+        "projectCount": 8
+      },
+      "recruitmentInfo": [
+        {
+          "position": "프론트엔드",
+          "tools": [{ "stackName": "Figma" }, { "stackName": "Adobe XD" }],
+          "years": 2,
+          "expectedRecruitmentDuration": {
+            "startDate": "2024-09-15T00:00:00.000Z",
+            "endDate": "2024-10-15T00:00:00.000Z"
+          }
+        }
+      ],
+      "expectedProjectDuration": {
+        "startDate": "2024-10-01T00:00:00.000Z",
+        "endDate": "2025-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "projectName": "GraphQL API Gateway",
+      "like": false,
+      "description": "여러 마이크로서비스를 통합하는 GraphQL API 게이트웨이를 구축하는 프로젝트입니다. 효율적인 데이터 fetching과 실시간 업데이트를 구현합니다.",
+      "tools": [{ "stackName": "GraphQL" }, { "stackName": "Nodejs" }],
+      "crewInfo": {
+        "userName": "graphql-master",
+        "userEmail": "graphql.master@gamil.com",
+        "nickName": "GraphGuru",
+        "position": "백엔드",
+        "tools": [
+          { "stackName": "GraphQL" },
+          { "stackName": "Nodejs" },
+          { "stackName": "Apollo Server" },
+          { "stackName": "PostgreSQL" },
+          { "stackName": "Docker" }
+        ],
+        "years": 5,
+        "projectCount": 1
+      },
+      "recruitmentInfo": [
+        {
+          "position": "백엔드",
+          "tools": [{ "stackName": "Docker" }, { "stackName": "Kubernetes" }, { "stackName": "AWS" }],
+          "years": 3,
+          "expectedRecruitmentDuration": {
+            "startDate": "2024-10-01T00:00:00.000Z",
+            "endDate": "2024-11-01T00:00:00.000Z"
+          }
+        }
+      ],
+      "expectedProjectDuration": {
+        "startDate": "2024-11-01T00:00:00.000Z",
+        "endDate": "2025-05-01T00:00:00.000Z"
+      }
+    },
+    {
+      "projectName": "React Platform App",
+      "like": true,
+      "description": "React Platform App은 사용자에게 직관적인 인터페이스와 뛰어난 성능을 제공하는 웹 애플리케이션입니다. 개발자가 쉽게 확장할 수 있도록 설계되었습니다. 실시간 데이터 처리와 API 통합을 통해 복잡한 비즈니스 로직을 효율적으로 구현할 수 있습니다.",
+      "tools": [
+        { "stackName": "React" },
+        { "stackName": "Javascript" },
+        { "stackName": "Redux" },
+        { "stackName": "MongoDB" },
+        { "stackName": "Nodejs" }
+      ],
+      "crewInfo": {
+        "userName": "react native pro",
+        "userEmail": "react.native.pro@gmail.com",
+        "nickName": "MobileWizard",
+        "position": "모바일 앱 개발자",
+        "tools": [
+          { "stackName": "React" },
+          { "stackName": "Javascript" },
+          { "stackName": "Kotlin" },
+          { "stackName": "Firebase" }
+        ],
+        "years": 3,
+        "projectCount": 15
+      },
+      "recruitmentInfo": [
+        {
+          "position": "백엔드",
+          "tools": [{ "stackName": "React" }, { "stackName": "Kotlin" }],
+          "years": 2,
+          "expectedRecruitmentDuration": {
+            "startDate": "2024-11-15T00:00:00.000Z",
+            "endDate": "2024-12-15T00:00:00.000Z"
+          }
+        }
+      ],
+      "expectedProjectDuration": {
+        "startDate": "2024-12-01T00:00:00.000Z",
+        "endDate": "2025-06-01T00:00:00.000Z"
+      }
+    },
+    {
+      "projectName": "Svelte Ecommerce Platform",
+      "like": false,
+      "description": "Svelte를 활용한 현대적이고 반응성 높은 E-commerce 플랫폼을 개발합니다. 빠른 로딩 시간과 부드러운 사용자 경험을 목표로 합니다.",
+      "tools": [
+        { "stackName": "Svelte" },
+        { "stackName": "Javascript" },
+        { "stackName": "Nodejs" },
+        { "stackName": "Redis" }
+      ],
+      "crewInfo": {
+        "userName": "svelte master",
+        "userEmail": "svelte.master@gmail.com",
+        "nickName": "SvelteSage",
+        "position": "프론트엔드",
+        "tools": [
+          { "stackName": "Svelte" },
+          { "stackName": "Javascript" },
+          { "stackName": "CSS" },
+          { "stackName": "Nodejs" },
+          { "stackName": "Express" }
+        ],
+        "years": 5,
+        "projectCount": 3
+      },
+      "recruitmentInfo": [
+        {
+          "position": "프론트엔드",
+          "tools": [{ "stackName": "CSS" }, { "stackName": "Tailwind CSS" }],
+          "years": 4,
+          "expectedRecruitmentDuration": {
+            "startDate": "2024-12-01T00:00:00.000Z",
+            "endDate": "2025-01-01T00:00:00.000Z"
+          }
+        }
+      ],
+      "expectedProjectDuration": {
+        "startDate": "2024-12-15T00:00:00.000Z",
+        "endDate": "2025-06-15T00:00:00.000Z"
+      }
+    }
+  ]
+}

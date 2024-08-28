@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import RecoilContextProvider from "@/lib/RecoilContextProvider";
 import { auth } from "@/lib/auth";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,6 +26,7 @@ export default async function RootLayout({ children }) {
             {children}
           </RecoilContextProvider>
         </div>
+        <Script src="/initLocalStorage.js" strategy="afterInteractive" />
       </body>
     </html>
   );
