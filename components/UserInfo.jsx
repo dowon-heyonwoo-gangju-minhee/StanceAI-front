@@ -9,6 +9,8 @@ import { atomIsShowUserInfo } from "@/hook/recoil/showUserInfo";
 
 const UserInfo = ({ session }) => {
   const router = useRouter();
+  const [userName, setUserName] = useState(session?.user?.name);
+
   const setShowUserInfo = useSetRecoilState(atomIsShowUserInfo);
   const [participatingProjects, setParticipatingProjects] = useState(0);
 
@@ -16,6 +18,10 @@ const UserInfo = ({ session }) => {
     const crewInfo = JSON.parse(localStorage.getItem("crewInfo")) || {};
     const participateCount = crewInfo.participate?.length || 0;
     setParticipatingProjects(participateCount);
+
+    if (crewInfo.nickName && crewInfo.nickName.trim() !== "") {
+      setUserName(crewInfo.nickName);
+    }
   }, []);
 
   const handleMyInfoClick = () => {
@@ -47,7 +53,7 @@ const UserInfo = ({ session }) => {
           className="rounded-full w-24 h-24"
         />
         {/* 사용자 이름 */}
-        <p className="text-xl font-semibold truncate w-56 text-center">{session?.user?.name}</p>
+        <p className="text-xl font-semibold truncate w-56 text-center">{userName}</p>
         {/* 프로젝트 정보 */}
         <div className="flex justify-center items-center text-base gap-1">
           <p>참여중인 프로젝트 : </p>
