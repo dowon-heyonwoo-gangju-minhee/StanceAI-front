@@ -9,7 +9,7 @@ const LoginForm = () => {
   const router = useRouter();
 
   const handleClose = () => {
-    router.replace(`/`, undefined, { shallow: true });
+    router.push(`/`);
   };
 
   return (
