@@ -1,8 +1,6 @@
 "use client";
 
 import { useState, useEffect, useCallback, useMemo } from "react";
-import { useRecoilValue } from "recoil";
-import { atomUserLoginInfo } from "@/hook/recoil/showUserInfo";
 
 import { JoinButton } from "./JoinButton";
 import UserPosition from "./UserPosition";
@@ -62,7 +60,6 @@ const UserProfileForm = () => {
 
   const handleSubmit = useCallback(() => {
     localStorage.setItem("crewInfo", JSON.stringify(crewInfo));
-    console.log("Saved crew info:", crewInfo);
     setShowToast(true);
     setTimeout(() => {
       setShowToast(false);
@@ -163,7 +160,7 @@ const UserProfileForm = () => {
         <div className="absolute right-0 bottom-24">
           <JoinButton
             title={buttonTitle}
-            style="bg-white ring-2 ring-accent text-accent hover:text-white"
+            style="bg-white ring-2 ring-accent text-accent hover:text-white hover:bg-accent"
             onClick={handleSubmit}
           />
         </div>

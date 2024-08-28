@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Projects from "./Projects";
 
@@ -13,7 +13,7 @@ const ProjectsClient = ({ projectData }) => {
     if (pathname.endsWith("participate")) {
       const crewInfo = JSON.parse(localStorage.getItem("crewInfo") || "{}");
       const userName = crewInfo.userName || "unknown";
-      router.push(`/myStance/${userName}/participate`);
+      router.replace(`/myStance/${userName}/participate`, undefined, { shallow: true });
     } else {
       router.replace("/", undefined, { shallow: true });
     }

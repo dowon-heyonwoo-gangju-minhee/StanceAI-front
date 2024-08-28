@@ -5,7 +5,6 @@ export const allProjects = {
       like: false,
       description:
         "React의 깊은 이해도를 위한 프로젝트입니다. 우리 프로젝트는 React에 대한 심층적으로 구조화를 구성할 수 있습니다.",
-      tools: [{ stackName: "React" }, { stackName: "Javascript" }],
       crewInfo: {
         userName: "So engineering",
         userEmail: "kokoball@gmail.com",
@@ -26,20 +25,16 @@ export const allProjects = {
           position: "프론트엔드",
           tools: [{ stackName: "React" }, { stackName: "Javascript" }],
           years: 2,
-        },
-        {
-          position: "백엔드",
-          tools: [{ stackName: "Nodejs" }, { stackName: "Javascript" }],
-          years: 2,
+          expectedRecruitmentDuration: {
+            startDate: "2024-08-27T11:36:38.244Z",
+            endDate: "2024-09-27T11:36:38.244Z",
+          },
         },
       ],
+
       expectedProjectDuration: {
         startDate: "2024-08-27T11:36:38.243Z",
         endDate: "2024-12-27T11:36:38.244Z",
-      },
-      expectedRecruitmentDuration: {
-        startDate: "2024-08-27T11:36:38.244Z",
-        endDate: "2024-09-27T11:36:38.244Z",
       },
     },
     {
@@ -68,15 +63,15 @@ export const allProjects = {
           position: "백엔드",
           tools: [{ stackName: "Nodejs" }, { stackName: "MongoDB" }],
           years: 3,
+          expectedRecruitmentDuration: {
+            startDate: "2024-08-15T00:00:00.000Z",
+            endDate: "2024-09-15T00:00:00.000Z",
+          },
         },
       ],
       expectedProjectDuration: {
         startDate: "2024-09-01T00:00:00.000Z",
         endDate: "2025-03-01T00:00:00.000Z",
-      },
-      expectedRecruitmentDuration: {
-        startDate: "2024-08-15T00:00:00.000Z",
-        endDate: "2024-09-15T00:00:00.000Z",
       },
     },
     {
@@ -104,15 +99,15 @@ export const allProjects = {
           position: "프론트엔드",
           tools: [{ stackName: "Figma" }, { stackName: "Adobe XD" }],
           years: 2,
+          expectedRecruitmentDuration: {
+            startDate: "2024-09-15T00:00:00.000Z",
+            endDate: "2024-10-15T00:00:00.000Z",
+          },
         },
       ],
       expectedProjectDuration: {
         startDate: "2024-10-01T00:00:00.000Z",
         endDate: "2025-04-01T00:00:00.000Z",
-      },
-      expectedRecruitmentDuration: {
-        startDate: "2024-09-15T00:00:00.000Z",
-        endDate: "2024-10-15T00:00:00.000Z",
       },
     },
     {
@@ -141,15 +136,16 @@ export const allProjects = {
           position: "백엔드",
           tools: [{ stackName: "Docker" }, { stackName: "Kubernetes" }, { stackName: "AWS" }],
           years: 3,
+          expectedRecruitmentDuration: {
+            startDate: "2024-10-01T00:00:00.000Z",
+            endDate: "2024-11-01T00:00:00.000Z",
+          },
         },
       ],
+
       expectedProjectDuration: {
         startDate: "2024-11-01T00:00:00.000Z",
         endDate: "2025-05-01T00:00:00.000Z",
-      },
-      expectedRecruitmentDuration: {
-        startDate: "2024-10-01T00:00:00.000Z",
-        endDate: "2024-11-01T00:00:00.000Z",
       },
     },
     {
@@ -183,15 +179,16 @@ export const allProjects = {
           position: "백엔드",
           tools: [{ stackName: "React" }, { stackName: "Kotlin" }],
           years: 2,
+          expectedRecruitmentDuration: {
+            startDate: "2024-11-15T00:00:00.000Z",
+            endDate: "2024-12-15T00:00:00.000Z",
+          },
         },
       ],
+
       expectedProjectDuration: {
         startDate: "2024-12-01T00:00:00.000Z",
         endDate: "2025-06-01T00:00:00.000Z",
-      },
-      expectedRecruitmentDuration: {
-        startDate: "2024-11-15T00:00:00.000Z",
-        endDate: "2024-12-15T00:00:00.000Z",
       },
     },
     {
@@ -226,15 +223,16 @@ export const allProjects = {
           position: "백엔드",
           tools: [{ stackName: "Nodejs" }, { stackName: "Express" }, { stackName: "MongoDB" }],
           years: 2,
+          expectedRecruitmentDuration: {
+            startDate: "2024-08-01T00:00:00.000Z",
+            endDate: "2024-09-01T00:00:00.000Z",
+          },
         },
       ],
+
       expectedProjectDuration: {
         startDate: "2024-09-01T00:00:00.000Z",
         endDate: "2025-03-01T00:00:00.000Z",
-      },
-      expectedRecruitmentDuration: {
-        startDate: "2024-08-01T00:00:00.000Z",
-        endDate: "2024-09-01T00:00:00.000Z",
       },
     },
     {
@@ -269,15 +267,16 @@ export const allProjects = {
           position: "백엔드",
           tools: [{ stackName: "Docker" }, { stackName: "Kubernetes" }, { stackName: "AWS" }],
           years: 3,
+          expectedRecruitmentDuration: {
+            startDate: "2024-09-01T00:00:00.000Z",
+            endDate: "2024-10-01T00:00:00.000Z",
+          },
         },
       ],
+
       expectedProjectDuration: {
         startDate: "2024-10-01T00:00:00.000Z",
         endDate: "2025-06-01T00:00:00.000Z",
-      },
-      expectedRecruitmentDuration: {
-        startDate: "2024-09-01T00:00:00.000Z",
-        endDate: "2024-10-01T00:00:00.000Z",
       },
     },
     {
@@ -312,15 +311,15 @@ export const allProjects = {
           position: "프론트엔드",
           tools: [{ stackName: "JavaScript" }, { stackName: "React" }],
           years: 2,
+          expectedRecruitmentDuration: {
+            startDate: "2024-10-01T00:00:00.000Z",
+            endDate: "2024-11-01T00:00:00.000Z",
+          },
         },
       ],
       expectedProjectDuration: {
         startDate: "2024-11-01T00:00:00.000Z",
         endDate: "2025-05-01T00:00:00.000Z",
-      },
-      expectedRecruitmentDuration: {
-        startDate: "2024-10-01T00:00:00.000Z",
-        endDate: "2024-11-01T00:00:00.000Z",
       },
     },
     {
@@ -355,15 +354,16 @@ export const allProjects = {
           position: "프론트엔드",
           tools: [{ stackName: "React" }, { stackName: "JavaScript" }],
           years: 2,
+          expectedRecruitmentDuration: {
+            startDate: "2023-12-01T00:00:00.000Z",
+            endDate: "2024-01-01T00:00:00.000Z",
+          },
         },
       ],
+
       expectedProjectDuration: {
         startDate: "2024-01-01T00:00:00.000Z",
         endDate: "2024-06-01T00:00:00.000Z",
-      },
-      expectedRecruitmentDuration: {
-        startDate: "2023-12-01T00:00:00.000Z",
-        endDate: "2024-01-01T00:00:00.000Z",
       },
     },
     {
@@ -398,15 +398,16 @@ export const allProjects = {
           position: "백엔드",
           tools: [{ stackName: "Nodejs" }, { stackName: "MongoDB" }],
           years: 2,
+          expectedRecruitmentDuration: {
+            startDate: "2024-01-01T00:00:00.000Z",
+            endDate: "2024-02-01T00:00:00.000Z",
+          },
         },
       ],
+
       expectedProjectDuration: {
         startDate: "2024-02-01T00:00:00.000Z",
         endDate: "2024-08-01T00:00:00.000Z",
-      },
-      expectedRecruitmentDuration: {
-        startDate: "2024-01-01T00:00:00.000Z",
-        endDate: "2024-02-01T00:00:00.000Z",
       },
     },
     {
@@ -436,20 +437,19 @@ export const allProjects = {
         years: 4,
         projectCount: 1,
       },
-      recruitmentInfo: [
-        {
-          position: "프론트엔드",
-          tools: [{ stackName: "React" }, { stackName: "JavaScript" }],
-          years: 2,
+      recruitmentInfo: {
+        position: "프론트엔드",
+        tools: [{ stackName: "React" }, { stackName: "JavaScript" }],
+        years: 2,
+        expectedRecruitmentDuration: {
+          startDate: "2024-02-01T00:00:00.000Z",
+          endDate: "2024-03-01T00:00:00.000Z",
         },
-      ],
+      },
+
       expectedProjectDuration: {
         startDate: "2024-03-01T00:00:00.000Z",
         endDate: "2024-12-01T00:00:00.000Z",
-      },
-      expectedRecruitmentDuration: {
-        startDate: "2024-02-01T00:00:00.000Z",
-        endDate: "2024-03-01T00:00:00.000Z",
       },
     },
     {
@@ -484,15 +484,16 @@ export const allProjects = {
           position: "백엔드",
           tools: [{ stackName: "Nodejs" }, { stackName: "MongoDB" }],
           years: 2,
+          expectedRecruitmentDuration: {
+            startDate: "2024-03-01T00:00:00.000Z",
+            endDate: "2024-04-01T00:00:00.000Z",
+          },
         },
       ],
+
       expectedProjectDuration: {
         startDate: "2024-04-01T00:00:00.000Z",
         endDate: "2024-10-01T00:00:00.000Z",
-      },
-      expectedRecruitmentDuration: {
-        startDate: "2024-03-01T00:00:00.000Z",
-        endDate: "2024-04-01T00:00:00.000Z",
       },
     },
     {
@@ -527,25 +528,15 @@ export const allProjects = {
           position: "프론트엔드",
           tools: [{ stackName: "React" }, { stackName: "JavaScript" }, { stackName: "Chart.js" }],
           years: 2,
-        },
-        {
-          position: "백엔드",
-          tools: [{ stackName: "Nodejs" }, { stackName: "Express" }, { stackName: "MongoDB" }],
-          years: 2,
-        },
-        {
-          position: "백엔드",
-          tools: [{ stackName: "Python" }, { stackName: "Pandas" }, { stackName: "Scikit-learn" }],
-          years: 3,
+          expectedRecruitmentDuration: {
+            startDate: "2024-04-01T00:00:00.000Z",
+            endDate: "2024-05-01T00:00:00.000Z",
+          },
         },
       ],
       expectedProjectDuration: {
         startDate: "2024-05-01T00:00:00.000Z",
         endDate: "2024-11-01T00:00:00.000Z",
-      },
-      expectedRecruitmentDuration: {
-        startDate: "2024-04-01T00:00:00.000Z",
-        endDate: "2024-05-01T00:00:00.000Z",
       },
     },
     {
@@ -580,20 +571,16 @@ export const allProjects = {
           position: "백엔드",
           tools: [{ stackName: "Nodejs" }, { stackName: "MongoDB" }, { stackName: "GraphQL" }],
           years: 2,
-        },
-        {
-          position: "프론트엔드",
-          tools: [{ stackName: "React" }, { stackName: "JavaScript" }, { stackName: "Redux" }],
-          years: 2,
+          expectedRecruitmentDuration: {
+            startDate: "2024-05-01T00:00:00.000Z",
+            endDate: "2024-06-01T00:00:00.000Z",
+          },
         },
       ],
+
       expectedProjectDuration: {
         startDate: "2024-06-01T00:00:00.000Z",
         endDate: "2024-12-01T00:00:00.000Z",
-      },
-      expectedRecruitmentDuration: {
-        startDate: "2024-05-01T00:00:00.000Z",
-        endDate: "2024-06-01T00:00:00.000Z",
       },
     },
     {
@@ -628,25 +615,15 @@ export const allProjects = {
           position: "프론트엔드",
           tools: [{ stackName: "React" }, { stackName: "JavaScript" }, { stackName: "TypeScript" }],
           years: 2,
-        },
-        {
-          position: "백엔드",
-          tools: [{ stackName: "Nodejs" }, { stackName: "Express" }, { stackName: "MongoDB" }],
-          years: 3,
-        },
-        {
-          position: "백엔드",
-          tools: [{ stackName: "Docker" }, { stackName: "Kubernetes" }, { stackName: "AWS" }],
-          years: 2,
+          expectedRecruitmentDuration: {
+            startDate: "2024-06-01T00:00:00.000Z",
+            endDate: "2024-07-01T00:00:00.000Z",
+          },
         },
       ],
       expectedProjectDuration: {
         startDate: "2024-07-01T00:00:00.000Z",
         endDate: "2025-01-01T00:00:00.000Z",
-      },
-      expectedRecruitmentDuration: {
-        startDate: "2024-06-01T00:00:00.000Z",
-        endDate: "2024-07-01T00:00:00.000Z",
       },
     },
     {
@@ -681,25 +658,15 @@ export const allProjects = {
           position: "백엔드",
           tools: [{ stackName: "Nodejs" }, { stackName: "MongoDB" }, { stackName: "Express" }],
           years: 2,
-        },
-        {
-          position: "프론트엔드",
-          tools: [{ stackName: "React" }, { stackName: "JavaScript" }, { stackName: "CSS" }],
-          years: 2,
-        },
-        {
-          position: "프론트엔드",
-          tools: [{ stackName: "Figma" }, { stackName: "Adobe XD" }],
-          years: 1,
+          expectedRecruitmentDuration: {
+            startDate: "2024-07-01T00:00:00.000Z",
+            endDate: "2024-08-01T00:00:00.000Z",
+          },
         },
       ],
       expectedProjectDuration: {
         startDate: "2024-08-01T00:00:00.000Z",
         endDate: "2025-02-01T00:00:00.000Z",
-      },
-      expectedRecruitmentDuration: {
-        startDate: "2024-07-01T00:00:00.000Z",
-        endDate: "2024-08-01T00:00:00.000Z",
       },
     },
   ],

@@ -47,6 +47,7 @@ const Post = ({ project, onLikeChange }) => {
       card.addEventListener("mousemove", handleMouseMove);
       card.addEventListener("mouseleave", handleMouseLeave);
     }
+    console.log("project", project);
     return () => {
       if (card) {
         card.removeEventListener("mousemove", handleMouseMove);
@@ -79,7 +80,7 @@ const Post = ({ project, onLikeChange }) => {
       {/* TOOLS */}
       <div className="text-base font-medium w-full h-14 overflow-hidden">
         <div className="flex flex-wrap gap-2 overflow-hidden">
-          {project.tools.map((tool, index) => (
+          {project?.recruitmentInfo[0]?.tools?.map((tool, index) => (
             <p key={index}>{`# ${tool.stackName}`}</p>
           ))}
         </div>

@@ -49,3 +49,35 @@
 *::-webkit-scrollbar-button {
   display: none;
 }
+
+.ant-picker input::placeholder {
+  font-size: 16px; /* placeholder 글자 크기 */
+  color: #999999; /* placeholder 색상 */
+}
+
+.ant-picker {
+  font-size: 16px;
+}
+.ant-picker input {
+  font-size: 16px;
+}
+.ant-picker-separator {
+  font-size: 16px;
+}
+.ant-picker-dropdown {
+  font-size: 16px;
+}
+
+.ant-message-notice-content {
+  font-size: 16px !important;
+  padding: 15px 20px !important;
+}
+
+.ant-message-custom-content {
+  display: flex;
+  align-items: center;
+}
+
+.ant-message-custom-content span:last-child {
+  margin-left: 10px;
+}

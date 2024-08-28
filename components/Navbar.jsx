@@ -51,24 +51,34 @@ const Navbar = ({ session }) => {
     if (session) {
       setUserSession(session.user);
 
-      // localStorage에서 crewInfo 가져오기
-      const savedCrewInfo = JSON.parse(localStorage.getItem("crewInfo") || "{}");
+      const storedProjectInfo = JSON.parse(localStorage.getItem("projectInfo") || "[]");
 
-      // session 정보로 crewInfo 업데이트
-      const updatedCrewInfo = {
-        ...savedCrewInfo,
-        userName: session.user.name,
-        userEmail: session.user.email,
-        nickName: savedCrewInfo.nickName || session.user.name,
-      };
-
-      // 업데이트된 crewInfo를 localStorage에 저장
-      localStorage.setItem("crewInfo", JSON.stringify(updatedCrewInfo));
+      const updatedProjectInfo = storedProjectInfo.map((project) => ({
+        ...project,
+        crewInfo: {
+          ...project.crewInfo,
+          userName: session.user.name,
+          userEmail: session.user.email,
+          nickName: project.crewInfo?.nickName || session.user.name,
+        },
+      }));
+      localStorage.setItem("projectInfo", JSON.stringify(updatedProjectInfo));
     }
   }, [session, setUserSession]);
 
   const handleLoginClick = () => {
     router.push("/login");
+  };
+
+  const shouldShowTabs = () => {
+    return (
+      (pathname === "/" ||
+        pathname.startsWith("/member") ||
+        pathname.startsWith("/projects") ||
+        pathname === "/login") &&
+      !pathname.includes("participate") &&
+      !pathname.includes("myStance")
+    );
   };
 
   return (
@@ -88,7 +98,7 @@ const Navbar = ({ session }) => {
           />
         </Link>
         {/* TAB */}
-        {!pathname.startsWith("/myStance") && (
+        {shouldShowTabs() && (
           <div
             className="w-72 h-16 ring-4 ring-line bg-white rounded-full flex justify-center items-center 
       px-2 py-[0.42rem] font-medium drop-shadow-md"

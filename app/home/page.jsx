@@ -1,16 +1,11 @@
 import SelectBox from "@/components/SelectBox";
 import PostLists from "@/components/PostLists";
 
-export const metadata = {
-  title: "home",
-};
-
 const HomePage = () => {
   return (
     <div className="w-full flex flex-col py-12">
       <div className="w-full flex justify-between items-center mt-16">
         <SelectBox />
-   
       </div>
       <PostLists />
     </div>

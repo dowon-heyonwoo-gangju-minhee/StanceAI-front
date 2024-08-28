@@ -1,61 +1,55 @@
 "use client";
 
-import { useState, useRef, useMemo, useCallback, useEffect } from "react";
-import { twMerge } from "tailwind-merge";
+import React, { useState, useRef, useEffect } from "react";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { toolsContents } from "@/data/toolContents";
-import { atomIsOpenToolSelected } from "@/hook/recoil/select";
-import { useRecoilState } from "recoil";
-import { usePathname } from "next/navigation";
 
 const toolTabs = ["전체", "프론트엔드", "백엔드"];
 
-const ToolSelect = ({ onSelect, initialSelectedTools = [] }) => {
-  const dropdownRef = useRef(null);
-  const pathname = usePathname();
-
+const RegisterTool = ({ onSelect, initialSelectedTools = [] }) => {
   const [activeTab, setActiveTab] = useState("전체");
   const [selectedTools, setSelectedTools] = useState(initialSelectedTools);
-
-  const [isOpen, setIsOpen] = useRecoilState(atomIsOpenToolSelected);
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
   const toggleDropdown = () => setIsOpen((prev) => !prev);
 
-  const handleSelect = useCallback(
-    (tool) => {
-      setSelectedTools((prev) => {
-        const newSelectedTools = prev.includes(tool) ? prev.filter((t) => t !== tool) : [...prev, tool];
-        onSelect(newSelectedTools);
-        return newSelectedTools;
-      });
-    },
-    [onSelect]
-  );
-
-  const filteredTools = useMemo(() => {
-    if (activeTab === "전체") return toolsContents;
-    return toolsContents.filter(
-      (tool) =>
-        (activeTab === "프론트엔드" && tool.part === "front") || (activeTab === "백엔드" && tool.part === "back")
-    );
-  }, [activeTab]);
+  const handleSelect = (tool) => {
+    setSelectedTools((prev) => {
+      const newSelectedTools = prev.includes(tool) ? prev.filter((t) => t !== tool) : [...prev, tool];
+      return newSelectedTools;
+    });
+  };
 
   useEffect(() => {
-    return () => setIsOpen(false);
-  }, [setIsOpen]);
+    onSelect(selectedTools);
+  }, [selectedTools, onSelect]);
+
+  const filteredTools =
+    activeTab === "전체"
+      ? toolsContents
+      : toolsContents.filter(
+          (tool) =>
+            (activeTab === "프론트엔드" && tool.part === "front") || (activeTab === "백엔드" && tool.part === "back")
+        );
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
-    <div
-      className={`${
-        pathname.startsWith("/myStance")
-          ? "h-9 w-96"
-          : pathname.startsWith("/register-project")
-          ? "h-9 w-96"
-          : "h-[46px] w-44"
-      } w-44 ring-2 ring-line rounded-full flex flex-col relative`}
-    >
+    <div className="w-96 h-9 ring-2 ring-line rounded-full flex flex-col relative">
       <div
-        className={twMerge("w-full h-full flex justify-between items-center p-1", "px-4")}
+        className="w-full h-full flex justify-between items-center px-4"
         onClick={toggleDropdown}
         tabIndex={0}
         role="button"
@@ -70,7 +64,7 @@ const ToolSelect = ({ onSelect, initialSelectedTools = [] }) => {
       {isOpen && (
         <div
           ref={dropdownRef}
-          className="ring-2 ring-line rounded-2xl w-96 text-base absolute top-full mt-3 py-2 px-4 bg-white z-10"
+          className="ring-2 ring-line rounded-2xl w-[400px] h-[350px] overflow-y-auto overflow-x-hidden text-base absolute top-full mt-3 py-2 px-4 bg-white z-10"
           role="listbox"
         >
           <div className="flex justify-between items-center gap-2">
@@ -95,8 +89,7 @@ const ToolSelect = ({ onSelect, initialSelectedTools = [] }) => {
                   selectedTools.includes(list.tool)
                     ? "bg-[#878787] text-white font-semibold text-base"
                     : "text-black hover:bg-opacity-80"
-                }  rounded-full 
-                  flex justify-center items-center w-28 h-9 cursor-pointer`}
+                } rounded-full flex justify-center items-center w-28 h-9 cursor-pointer`}
                 onClick={() => handleSelect(list.tool)}
                 role="option"
                 aria-selected={selectedTools.includes(list.tool)}
@@ -111,4 +104,4 @@ const ToolSelect = ({ onSelect, initialSelectedTools = [] }) => {
   );
 };
 
-export default ToolSelect;
+export default RegisterTool;

@@ -26,7 +26,10 @@ export const Info = ({ leader, date }) => (
 
 // 내용 컴포넌트
 export const Contents = ({ description }) => (
-  <div className={`${STYLES.container} h-[105px]  text-black text-xl flex justify-center items-center leading-relaxed`}>
+  <div
+    className={`${STYLES.container} h-[105px] text-black text-xl flex 
+    justify-center items-center leading-relaxed flex-wrap w-full line-clamp-3 overflow-hidden text-ellipsis`}
+  >
     {description}
   </div>
 );

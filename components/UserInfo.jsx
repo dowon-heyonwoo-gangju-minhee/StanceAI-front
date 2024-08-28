@@ -27,7 +27,7 @@ const UserInfo = ({ session }) => {
 
   const handleParticipateClick = () => {
     if (session?.user?.name) {
-      router.push(`/myStance/${session.user.name}/participate`);
+      router.replace(`/myStance/${session.user.name}/participate`);
     }
     setShowUserInfo(false);
   };

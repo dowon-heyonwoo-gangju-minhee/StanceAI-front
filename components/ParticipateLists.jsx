@@ -19,10 +19,19 @@ const ParticipateLists = () => {
 
     // localStorage 업데이트
     const crewInfo = JSON.parse(localStorage.getItem("crewInfo")) || {};
-    crewInfo.participate = participateProjects.map((project) =>
+    crewInfo.participate = crewInfo.participate.map((project) =>
       project.title === title ? { ...project, like: newLikeState } : project
     );
     localStorage.setItem("crewInfo", JSON.stringify(crewInfo));
+
+    // allProjects에서도 like 상태 업데이트
+    const allProjects = JSON.parse(localStorage.getItem("allProjects")) || {};
+    if (allProjects.projectInfo) {
+      allProjects.projectInfo = allProjects.projectInfo.map((project) =>
+        project.projectName === title ? { ...project, like: newLikeState } : project
+      );
+      localStorage.setItem("allProjects", JSON.stringify(allProjects));
+    }
   };
 
   const handleRemoveProject = (title) => {

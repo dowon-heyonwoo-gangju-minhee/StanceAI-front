@@ -57,7 +57,11 @@ const Projects = ({ projectData, showMessage, onClose, onJoinProject }) => {
             <TeamInfo teamInfo={projectData.teamInfo} />
             {!isLoading && !isParticipating && (
               <div className="flex justify-end items-end">
-                <JoinButton title="프로젝트 참여" style="bg-accent text-white" onClick={handleJoinProject} />
+                <JoinButton
+                  title="프로젝트 참여"
+                  style="bg-white ring-2 ring-accent text-accent hover:bg-accent hover:text-white"
+                  onClick={handleJoinProject}
+                />
               </div>
             )}
           </>
