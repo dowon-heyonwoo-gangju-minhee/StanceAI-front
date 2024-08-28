@@ -58,14 +58,14 @@ const UserProfileForm = () => {
     }));
   }, []);
 
-  const handleSubmit = useCallback(() => {
+  const handleSubmit = () => {
     localStorage.setItem("crewInfo", JSON.stringify(crewInfo));
     setShowToast(true);
     setTimeout(() => {
       setShowToast(false);
-      router.push("/"); // 홈으로 이동
-    }, 2000); // 2초 후 홈으로 이동
-  }, [crewInfo, router]);
+      window.location.href = "/";
+    }, 2000);
+  };
 
   const handleNumberInput = useCallback(
     (field) => (e) => {
