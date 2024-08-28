@@ -14,6 +14,11 @@ export default async function middleware(req) {
       return NextResponse.redirect(new URL(authResult.redirectUrl, req.url));
     }
   }
+  console.log("pathname", pathname);
+  console.log(
+    "pathtestname",
+    protectedRoutes.some((route) => pathname.startsWith(route))
+  );
 
   // 인증이 필요없는 경로는 그대로 진행
   return NextResponse.next();
