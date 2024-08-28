@@ -428,7 +428,7 @@
           userName: "learning-platform-team",
           userEmail: "learning.platform@example.com",
           nickName: "EduTech",
-          position: "풀스택 개발자",
+          position: "프론트엔드",
           tools: [
             { stackName: "React" },
             { stackName: "Nodejs" },
@@ -448,7 +448,6 @@
             endDate: "2024-03-01T00:00:00.000Z",
           },
         },
-
         expectedProjectDuration: {
           startDate: "2024-03-01T00:00:00.000Z",
           endDate: "2024-12-01T00:00:00.000Z",

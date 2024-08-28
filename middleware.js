@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { checkAuth } from "@/lib/checkAuth";
 
 // 인증이 필요한 경로들을 배열로 정의
-const protectedRoutes = ["/projects"];
+const protectedRoutes = ["/projects", "/register-project"];
 
 export default async function middleware(req) {
   const { pathname } = req.nextUrl;
@@ -29,5 +29,5 @@ export default async function middleware(req) {
 
 // 미들웨어를 적용할 경로 설정
 export const config = {
-  matcher: ["/projects/:path*", "/api/:path*", "/((?!_next/static|favicon.ico).*)"],
+  matcher: ["/projects/:path*", "/register-project", "/api/:path*", "/((?!_next/static|favicon.ico).*)"],
 };
