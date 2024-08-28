@@ -6,11 +6,12 @@ const protectedRoutes = ["/projects"];
 
 export async function middleware(req) {
   const { pathname } = req.nextUrl;
-
+  console.log("pathname", pathname);
+  console.log("req", req);
   // 보호된 경로인지 확인
   if (protectedRoutes.some((route) => pathname.startsWith(route))) {
     const authResult = await checkAuth(req);
-
+    console.log("authResult", authResult);
     if (!authResult.authenticated) {
       return NextResponse.redirect(new URL(authResult.redirectUrl, req.url));
     }

@@ -67,7 +67,7 @@ const Navbar = ({ session }) => {
   }, [session, setUserSession]);
 
   const handleLoginClick = () => {
-    router.push("/login");
+    router.replace("/login");
   };
 
   const shouldShowTabs = () => {
